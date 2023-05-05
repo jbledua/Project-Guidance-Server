@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The server-side application for Project-Guidance to receive messages using chatGPT API",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "firebase": "^9.21.0",
-    "firebase-admin": "^11.7.0"
+    "firebase-admin": "^11.7.0",
+    "openai": "^3.2.1"
   }
 }
