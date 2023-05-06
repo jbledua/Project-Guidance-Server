@@ -381,6 +381,13 @@ const openai = new OpenAIApi(configuration);
       // Generate chat response from OpenAI
       const response = await generateChatResponse(formattedMessages);
 
+      // // Convert newline characters to <br> tags
+      // this.messages.forEach(_message => {
+      //   _message.content = _message.content.replace(/\n/g, '<br/>');
+
+      //   console.log("In for each loop");
+      // });
+
 
       const responseMessage = {
         content: response,
@@ -390,6 +397,8 @@ const openai = new OpenAIApi(configuration);
         threadId: threadId,
         timestamp: new Date(),
       };
+
+      responseMessage.content = responseMessage.content.replace(/\n/g, '<br/>');
 
       // Write message to Firestore
       await writeMessageToThread(db, responseMessage);
